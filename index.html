@@ -1496,7 +1496,7 @@ function azar(semilla){ let a = semilla >>> 0; return () => { a |= 0; a = a + 0x
    En la versión real, cada registro se guarda como un documento en
    Firestore (Firebase): solo cambia este archivo, el resto no se toca.
    ===================================================================== */
-const VERSION_DATOS = 2;   // 2: insumos con vencimiento y lista de compras
+const VERSION_DATOS = 3;   // 2: insumos con vencimiento y lista de compras · 3: los turnos que vienen ya no traen «lo que se hizo»
 const Store = {
   data: null,
   cargar(){
@@ -1731,6 +1731,8 @@ function crearDatosEjemplo(h){
     }
     // Algún «no vino» o cancelado, solo en esmaltados (así no se rompe la cuenta del mantenimiento)
     if (pasado && t.estado === 'realizado' && !s.ciclo && r() < .1 && f < sumarDias(h, -3)) t.estado = r() < .5 ? 'noasistio' : 'cancelado';
+    // Cómo quedaron las uñas se anota recién al terminar el turno: los que vienen no lo tienen
+    if (t.estado !== 'realizado') delete t.trabajo;
     d.turnos.push(t);
     // Seña (sobre todo para las colocaciones)
     if (o.sena){ const fs = sumarDias(f, -entre(2, 6)); d.movs.push({ id:id('m'), fecha: fs > h ? h : fs, tipo:'ing', cat:'Señas',
@@ -1993,7 +1995,8 @@ function ir(id, sinHash){
   if (!sinHash && location.hash !== '#' + id) history.replaceState(null, '', '#' + id);
   window.scrollTo(0, 0);
 }
-function refrescar(){ const y = window.scrollY; pintarNav(); RENDER[seccionActual](); pintarFab(); activarRevelado(); window.scrollTo(0, y); }
+// Al redibujar después de un cambio no se repite el efecto de aparición (si no, la pantalla parpadea en cada toque)
+function refrescar(){ const y = window.scrollY; pintarNav(); RENDER[seccionActual](); pintarFab(); $$('#vista .revelar').forEach(e => e.classList.add('visible')); window.scrollTo(0, y); }
 
 // Botón redondo «+»: hace lo principal de cada sección (en la compu no se ve: está el botón del encabezado)
 function pintarFab(){
