@@ -1,15 +1,16 @@
-# Demostración · Eduarda Hoffmann · Nail Design
+# Demonstração · Eduarda Hoffmann · Nail Design
 
-Demostración de una página de gestión para **Eduarda Hoffmann**, nail designer, hecha por **Wydan Solutions**:
-la agenda del día, a quién le toca el mantenimiento de las extensiones (cada 21 días), la ficha de cada clienta
-con la forma, el largo y el color de sus uñas, la garantía de las reparaciones, las señas, los cobros y gastos,
-los insumos con su lista de compras y la lista de precios en PDF para mandarle a las clientas.
+Demonstração de uma página de gestão para **Eduarda Hoffmann**, nail designer, feita pela **Wydan Solutions**:
+a agenda do dia, quem está na hora da manutenção do alongamento (a cada 21 dias), a ficha de cada cliente
+com o formato, o comprimento e a cor das unhas, a garantia dos reparos, os sinais, o financeiro do salão,
+as finanças pessoais (retiradas e gastos), os materiais com a lista de compras e a tabela de preços em PDF
+para enviar às clientes.
 
-- **Las clientas, teléfonos, turnos, precios e importes son inventados** para la demostración.
-- Funciona entera en el navegador: no hay servidor ni base de datos.
-- Contraseña de la demostración: `1234`.
+- **As clientes, telefones, horários, preços e valores são fictícios**, só para a demonstração.
+- Funciona inteira no navegador: não há servidor nem banco de dados.
+- Senha da demonstração: `1234`.
 
-Cada persona que abre la página trabaja con su propia copia de los datos de ejemplo, guardada solo en su navegador.
+Cada pessoa que abre a página trabalha com a sua própria cópia dos dados de exemplo, guardada só no seu navegador.
 
 ---
-Wydan Solutions · páginas de gestión a medida · wydan.solutions@gmail.com
+Wydan Solutions · páginas de gestão sob medida · wydan.solutions@gmail.com
